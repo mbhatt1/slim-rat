@@ -1,0 +1,42 @@
+{
+  "name": "slim-rat",
+  "title": "Slim RAT",
+  "description": "Remote Administration Tool",
+  "license": "MIT",
+  "version": "1.0.0",
+  "main": "main.js",
+  "homepage": "https://github.com/abrahamcarvalhoo/slim-rat",
+  "author": {
+    "name": "Abraham Carvalho",
+    "email": "abraham.carvalhoo@gmail.com",
+    "url": "http://abrahamcarvalhoo.github.io"
+  },
+  "keywords": [
+    "angular",
+    "electron"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:abrahamcarvalhoo/slim-rat"
+  },
+  "bugs": {
+    "url": "https://github.com/abrahamcarvalhoo/slim-rat/issues"
+  },
+  "scripts": {
+    "start": "electron ."
+  },
+  "engines": {
+    "node": ">=0.12"
+  },
+  "devDependencies": {
+    "electron": "^1.7.10"
+  },
+  "dependencies": {
+    "angular": "^1.6.8",
+    "angular-route": "^1.6.8",
+    "fs-extra": "^5.0.0",
+    "geoip-lite": "^1.2.1",
+    "homedir": "^0.6.0",
+    "socket.io": "^2.0.4"
+  }
+}
