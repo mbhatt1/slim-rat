@@ -1,7 +1,7 @@
 {
   "name": "slim-rat",
   "title": "Slim RAT",
-  "description": "Remote Administration Tool",
+  "description": "A fast and light-weight remote administration tool.",
   "license": "MIT",
   "version": "1.0.0",
   "main": "main.js",
@@ -12,9 +12,12 @@
     "url": "http://abrahamcarvalhoo.github.io"
   },
   "keywords": [
-    "electron",
+    "nodejs",
+    "npm",
     "angularjs",
-    "remote-administrator-tool",
+    "electronjs",
+    "socketio",
+    "remote-administrator-tool"
   ],
   "repository": {
     "type": "git",
