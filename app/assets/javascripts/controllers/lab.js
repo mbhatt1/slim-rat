@@ -1,6 +1,6 @@
-const { remote } = require('electron');
-const { ipcRenderer } = require('electron');
 var app = angular.module('LabApp', ['ngRoute', 'infinite-scroll']);
+const { ipcRenderer } = require('electron');
+const { remote } = require('electron');
 var homeDir = require('homedir');
 var fs = require('fs-extra');
 var path = require('path');

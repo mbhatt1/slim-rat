@@ -1,6 +1,6 @@
-const { remote } = require('electron');
+var app = angular.module('MainApp', ['infinite-scroll']);
 const { ipcRenderer } = require('electron');
-var app = angular.module('MainApp', []);
+const { remote } = require('electron');
 var homeDir = require('homedir');
 var fs = require('fs-extra');
 var path = require('path');
