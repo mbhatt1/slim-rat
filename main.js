@@ -1,19 +1,18 @@
-var electron = require('electron');
-var geoip = require('geoip-lite');
-var io = require('socket.io');
-var path = require('path');
-var url = require('url');
+const { electron, clientMain } = require('electron');
+const path = require('path');
+const url = require('url');
+const app = electron.app;
+const BrowserWindow = electron.BrowserWindow;
 
-var app = electron.app;
-var clientMain = electron;
-var BrowserWindow = electron.BrowserWindow;
-var victimsList = require('./app/assets/js/model/victim');
-module.exports = victimsList;
+let mainWindow;
+let clientWindow;
 
-var mainWindow;
-var clientWindow;
-var windows = {};
 var IO;
+var windows = {};
+var io = require('socket.io');
+var geoip = require('geoip-lite');
+var victimsList = require('./app/assets/javascripts/models/victims');
+module.exports = victimsList;
 
 function createWindow() {
   mainWindow = new BrowserWindow({
