@@ -12,8 +12,9 @@
     "url": "http://abrahamcarvalhoo.github.io"
   },
   "keywords": [
-    "angular",
-    "electron"
+    "electron",
+    "angularjs",
+    "remote-administrator-tool",
   ],
   "repository": {
     "type": "git",

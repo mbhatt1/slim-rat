@@ -83,10 +83,10 @@ process.on('uncaughtException', function(error) {
 ipcMain.on('openLabWindow', function(e, page, index) {
   let child = new BrowserWindow({
     width: 1200,
-    height: 900,
-    frame: false,
-    resizable: false,
-    parent: mainWindow,
+    height: 700,
+    center: true,
+    minWidth: 900,
+    minHeight: 500,
   });
 
   windows[index] = child.id;
