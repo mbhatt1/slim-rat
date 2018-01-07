@@ -14,9 +14,9 @@
   "keywords": [
     "nodejs",
     "npm",
-    "angularjs",
-    "electronjs",
+    "electron",
     "socketio",
+    "angularjs",
     "remote-administrator-tool"
   ],
   "repository": {

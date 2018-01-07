@@ -1,10 +1,8 @@
-# [![Slim RAT](https://raw.githubusercontent.com/abrahamcarvalhoo/web-starter-kit/master/app/assets/images/social.png "Slim RAT")][github-url]
-
-[github-url]: https://github.com/abrahamcarvalhoo/web-starter-kit
+# [![Slim RAT](https://raw.githubusercontent.com/abrahamcarvalhoo/slim-rat/master/app/assets/images/splash.png "Slim RAT")][https://github.com/abrahamcarvalhoo/slim-rat]
 
 ## Overview
 
-**Slim RAT** is a fast and light-weight remote administration tool based on NodeJS, NPM, AngularJS, ElectronJS and SocketIO.
+**Slim RAT** is a fast and light-weight remote administration tool based on NodeJS, NPM, Electron, SocketIO and AngularJS.
 
 ## Setup
 
