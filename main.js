@@ -12,12 +12,35 @@ var victimsList = require('./app/assets/javascripts/models/victims');
 module.exports = victimsList;
 
 function createWindow() {
+  let splashWindow = new BrowserWindow({
+    width: 960,
+    height: 650,
+    show: false,
+    center: true,
+    frame: false,
+    resizable: false,
+    alwaysOnTop: true,
+    icon: __dirname + '/app/assets/images/icons/64x64.png',
+  });
+
+  splashWindow.loadURL('file://' + __dirname + '/app/splash.html');
+
+  splashWindow.webContents.on('did-finish-load', function() {
+    splashWindow.show();
+  });
+
+  splashWindow.on('closed', function() {
+    splashWindow = null;
+  });
+
   mainWindow = new BrowserWindow({
     width: 1200,
     height: 700,
+    show: false,
     center: true,
     minWidth: 900,
     minHeight: 500,
+    icon: __dirname + '/app/assets/images/icons/64x64.png',
   });
 
   mainWindow.setMenu(null);
@@ -25,6 +48,13 @@ function createWindow() {
 
   mainWindow.on('closed', function() {
     mainWindow = null;
+  });
+
+  mainWindow.webContents.on('did-finish-load', function() {
+    setTimeout(function () {
+      splashWindow.close();
+      mainWindow.show();
+    }, 2000);
   });
 }
 
@@ -87,6 +117,8 @@ ipcMain.on('openLabWindow', function(e, page, index) {
     center: true,
     minWidth: 900,
     minHeight: 500,
+    parent: mainWindow,
+    icon: __dirname + '/app/assets/images/icons/64x64.png',
   });
 
   windows[index] = child.id;
