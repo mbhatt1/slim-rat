@@ -1,4 +1,5 @@
-const { remote, clientRenderer } = require('electron');
+const { remote } = require('electron');
+const { clientRenderer } = require('electron');
 var app = angular.module('LabApp', ['ngRoute', 'infinite-scroll']);
 var homeDir = require('homedir');
 var fs = require('fs-extra');
