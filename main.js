@@ -1,4 +1,4 @@
-const { clientMain } = require('electron');
+const { ipcMain } = require('electron');
 const electron = require('electron');
 const path = require('path');
 const url = require('url');
@@ -46,7 +46,7 @@ app.on('activate', function() {
   }
 });
 
-clientMain.on('SocketIO:Listen', function(event, port) {
+ipcMain.on('SocketIO:Listen', function(event, port) {
   IO = io.listen(port);
   IO.sockets.pingInterval = 10000;
   IO.sockets.on('connection', function(socket) {
@@ -84,7 +84,7 @@ process.on('uncaughtException', function(error) {
   }
 });
 
-clientMain.on('openLabWindow', function(e, page, index) {
+ipcMain.on('openLabWindow', function(e, page, index) {
   clientWindow = new BrowserWindow({
     width: 1200,
     height: 900,

