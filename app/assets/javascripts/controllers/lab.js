@@ -55,6 +55,10 @@ app.controller('LabCtrl', function($scope, $rootScope, $location) {
     window.close();
   };
 
+  $labCtrl.minimize = function() {
+    window.minimize();
+  };
+
   $rootScope.Log = function(msg, status) {
     var fontColor = 'white';
 

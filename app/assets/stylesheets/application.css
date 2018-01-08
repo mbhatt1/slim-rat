@@ -15,8 +15,8 @@
 }
 
 .title i {
-  font-size: 3rem;
-  vertical-align: middle;
+  font-size: 3.3rem;
+  vertical-align: sub;
   display: inline-block;
 }
 
@@ -48,5 +48,25 @@
 }
 
 .mr15 {
-  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.nav-extended .tabs {
+  height: auto !important;
+}
+
+.nav-extended .tabs .tab {
+  height: auto !important;
+  line-height: inherit !important;
+}
+
+.nav-extended .tabs .tab a {
+  text-transform: capitalize;
+  padding-bottom: 12px !important;
+}
+
+.nav-extended .tabs .tab a i {
+  margin-bottom: 5px;
+  height: auto !important;
+  line-height: inherit !important;
 }

@@ -25,7 +25,7 @@
         <img class="logo" src="assets/images/logo.png" alt="Slim RAT">
       </div>
       <div class="right">
-        <button ng-disabled="isListen" ng-click="isListen=true;Listen(port);" class="btn-floating btn-large halfway-fab waves-effect waves-light indigo"><i class="material-icons">play_arrow</i></button>
+        <button ng-disabled="isListen" ng-click="isListen=true; Listen(port);" class="btn-floating btn-large halfway-fab waves-effect waves-light indigo"><i class="material-icons">play_arrow</i></button>
       </div>
     </div>
   </nav>
@@ -44,7 +44,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr ng-repeat="(key, victim) in victims" ng-click="openLab(key)">
+          <tr ng-repeat="(key, victim) in victims" ng-click="openLab(key);">
             <td class="id" ng-bind="key"></td>
             <td class="manf" ng-bind="victim.manf"></td>
             <td class="model" ng-bind="victim.model"></td>
