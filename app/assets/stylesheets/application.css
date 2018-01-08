@@ -1,13 +1,52 @@
-body {
-  margin: 0;
-  padding: 0;
-  color: #fff;
+.logo,
+.table tbody {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.main {
+  padding-bottom: 15px;
+}
+
+.title {
+  font-weight: 300;
+}
+
+.title i {
+  font-size: 3rem;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.table {
   width: 100%;
-  height: 100vh;
-  display: flex;
-  text-align: center;
-  align-items: center;
-  font-family: sans-serif;
-  justify-content: center;
-  background-color: #121212;
+  position: relative;
+}
+
+.table tbody tr {
+  cursor: pointer;
+}
+
+.table tbody tr:hover {
+  color: #fff !important;
+  background-color: #3f51b5 !important;
+}
+
+.table tbody tr td.id {
+  text-transform: uppercase;
+}
+
+.table tbody tr td.manf {
+  text-transform: capitalize;
+}
+
+.device {
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.mr15 {
+  margin-left: -15px;
 }

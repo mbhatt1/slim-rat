@@ -10,13 +10,37 @@
   <script src="../node_modules/angular-route/angular-route.js"></script>
   <script src="../node_modules/ng-infinite-scroll/build/ng-infinite-scroll.js"></script>
   <script src="assets/javascripts/vendors/jquery.js"></script>
+  <script src="assets/javascripts/vendors/materialize.js"></script>
   <script src="assets/javascripts/vendors/leaflet.js"></script>
   <script src="assets/javascripts/controllers/lab.js"></script>
   <script>if (window.module) module = window.module;</script>
+  <link rel="stylesheet" href="assets/stylesheets/vendors/materialize.css">
   <link rel="stylesheet" href="assets/stylesheets/vendors/leaflet.css">
   <link rel="stylesheet" href="assets/stylesheets/application.css">
 </head>
 <body ng-controller="LabCtrl">
-  <h2>LabCtrl</h2>
+  <nav class="indigo darken-4 nav-extended">
+    <div class="nav-wrapper container">
+      <div class="left">
+        <img class="logo" src="assets/images/logo.png" alt="Slim RAT">
+      </div>
+      <ul class="right mr15">
+        <li><span class="device">D54d58D6dF65F</span></li>
+        <li><a href="#"><i class="material-icons">arrow_forward</i></a></li>
+      </ul>
+    </div>
+      <div class="nav-content">
+        <ul class="tabs tabs-fixed-width tabs-transparent">
+          <li class="tab"><a href="#">Test 01</a></li>
+          <li class="tab"><a href="#">Test 02</a></li>
+          <li class="tab"><a href="#">Test 03</a></li>
+        </ul>
+      </div>
+  </nav>
+  <main class="main">
+    <div class="container">
+      <div id="logLab"></div>
+    </div>
+  </main>
 </body>
 </html>
