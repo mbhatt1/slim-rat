@@ -54,7 +54,11 @@ app.controller('MainCtrl', function($scope) {
     $mainCtrl.$apply();
   });
 
-  $mainCtrl.openLab = function(index) {
+  $mainCtrl.openLab = function(index, manf, model, release) {
+    localStorage.setItem('victim_id', index);
+    localStorage.setItem('victim_manf', manf);
+    localStorage.setItem('victim_model', model);
+    localStorage.setItem('victim_release', release);
     ipcRenderer.send('openLabWindow', 'lab.html', index);
   };
 

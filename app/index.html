@@ -13,6 +13,7 @@
   <script src="assets/javascripts/vendors/materialize.js"></script>
   <script src="assets/javascripts/vendors/leaflet.js"></script>
   <script src="assets/javascripts/controllers/main.js"></script>
+  <script src="assets/javascripts/application.js"></script>
   <script>if (window.module) module = window.module;</script>
   <link rel="stylesheet" href="assets/stylesheets/vendors/materialize.css">
   <link rel="stylesheet" href="assets/stylesheets/vendors/leaflet.css">
@@ -25,7 +26,7 @@
         <img class="logo" src="assets/images/logo.png" alt="Slim RAT">
       </div>
       <div class="right">
-        <button ng-disabled="isListen" ng-click="isListen=true; Listen(port);" class="btn-floating btn-large halfway-fab waves-effect waves-light indigo"><i class="material-icons">play_arrow</i></button>
+        <button class="btn-floating btn-large halfway-fab waves-effect waves-light indigo" ng-disabled="isListen" ng-click="isListen=true; Listen(port);"><i class="material-icons">play_arrow</i></button>
       </div>
     </div>
   </nav>
@@ -44,7 +45,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr ng-repeat="(key, victim) in victims" ng-click="openLab(key);">
+          <tr ng-repeat="(key, victim) in victims" ng-click="openLab(key, victim.manf, victim.model, victim.release);">
             <td class="id" ng-bind="key"></td>
             <td class="manf" ng-bind="victim.manf"></td>
             <td class="model" ng-bind="victim.model"></td>

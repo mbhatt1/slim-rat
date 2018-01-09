@@ -47,6 +47,12 @@ app.config(function($routeProvider) {
 app.controller('LabCtrl', function($scope, $rootScope, $location) {
   $labCtrl = $scope;
   $labCtrl.logs = [];
+  $labCtrl.victim = {
+    id: localStorage.getItem('victim_id'),
+    manf: localStorage.getItem('victim_manf'),
+    model: localStorage.getItem('victim_model'),
+    release: localStorage.getItem('victim_release')
+  };
 
   var log = document.getElementById('logLab');
   const window = remote.getCurrentWindow();

