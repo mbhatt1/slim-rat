@@ -20,31 +20,33 @@
   <link rel="stylesheet" href="assets/stylesheets/application.css">
 </head>
 <body ng-controller="LabCtrl">
-  <nav class="nav-extended indigo darken-4">
-    <div class="nav-wrapper container">
-      <div class="left">
-        <img class="logo" src="assets/images/logo.png" alt="Slim RAT">
+  <div class="navbar-fixed">
+    <nav class="nav-extended indigo darken-4">
+      <div class="nav-wrapper container">
+        <div class="left">
+          <img class="logo" src="assets/images/logo.png" alt="Slim RAT">
+        </div>
+        <ul class="right mr15">
+          <li><span class="device" ng-bind="victim.model"></span></li>
+          <li><a ng-click="close();"><i class="material-icons">arrow_forward</i></a></li>
+        </ul>
       </div>
-      <ul class="right mr15">
-        <li><span class="device" ng-bind="victim.model"></span></li>
-        <li><a ng-click="close();"><i class="material-icons">arrow_forward</i></a></li>
-      </ul>
-    </div>
-    <div class="nav-content">
-      <ul class="tabs tabs-fixed-width tabs-transparent">
-        <li class="tab"><a ng-click="goToPage('camera');"><i class="material-icons">photo_camera</i> Camera</a></li>
-        <li class="tab"><a ng-click="goToPage('fileManager');"><i class="material-icons">folder_shared</i> File Manager</a></li>
-        <li class="tab"><a ng-click="goToPage('mic');"><i class="material-icons">mic</i> Mic</a></li>
-        <li class="tab"><a ng-click="goToPage('location');"><i class="material-icons">place</i> Location</a></li>
-        <li class="tab"><a ng-click="goToPage('contacts');"><i class="material-icons">group</i> Contacts</a></li>
-        <li class="tab"><a ng-click="goToPage('smsManager');"><i class="material-icons">sms</i> SMS</a></li>
-        <li class="tab"><a ng-click="goToPage('callsLogs');"><i class="material-icons">call</i> Calls Logs</a></li>
-      </ul>
-    </div>
-  </nav>
+      <div class="nav-content">
+        <ul class="tabs tabs-fixed-width tabs-transparent">
+          <li class="tab"><a ng-click="goToPage('camera');"><i class="material-icons">photo_camera</i> Camera</a></li>
+          <li class="tab"><a ng-click="goToPage('fileManager');"><i class="material-icons">folder_shared</i> File Manager</a></li>
+          <li class="tab"><a ng-click="goToPage('mic');"><i class="material-icons">mic</i> Mic</a></li>
+          <li class="tab"><a ng-click="goToPage('location');"><i class="material-icons">place</i> Location</a></li>
+          <li class="tab"><a ng-click="goToPage('contacts');"><i class="material-icons">group</i> Contacts</a></li>
+          <li class="tab"><a ng-click="goToPage('smsManager');"><i class="material-icons">sms</i> SMS</a></li>
+          <li class="tab"><a ng-click="goToPage('callsLogs');"><i class="material-icons">call</i> Calls Logs</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
   <main class="main">
     <div class="container">
-      <div ng-view></div>
+      <div class="content" ng-view></div>
       <div id="log"></div>
     </div>
   </main>

@@ -20,16 +20,18 @@
   <link rel="stylesheet" href="assets/stylesheets/application.css">
 </head>
 <body ng-controller="MainCtrl">
-  <nav class="indigo darken-4">
-    <div class="nav-wrapper container">
-      <div class="left">
-        <img class="logo" src="assets/images/logo.png" alt="Slim RAT">
+  <div class="navbar-fixed">
+    <nav class="indigo darken-4">
+      <div class="nav-wrapper container">
+        <div class="left">
+          <img class="logo" src="assets/images/logo.png" alt="Slim RAT">
+        </div>
+        <div class="right">
+          <button class="btn-floating btn-large halfway-fab waves-effect waves-light indigo" ng-disabled="isListen" ng-click="isListen=true; Listen(port);"><i class="material-icons">play_arrow</i></button>
+        </div>
       </div>
-      <div class="right">
-        <button class="btn-floating btn-large halfway-fab waves-effect waves-light indigo" ng-disabled="isListen" ng-click="isListen=true; Listen(port);"><i class="material-icons">play_arrow</i></button>
-      </div>
-    </div>
-  </nav>
+    </nav>
+  </div>
   <main class="main">
     <div class="container">
       <h3 class="title indigo-text"><i class="material-icons">group</i> Victims</h3>

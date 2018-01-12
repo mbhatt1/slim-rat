@@ -5,6 +5,7 @@ var homeDir = require('homedir');
 var fs = require('fs-extra');
 var path = require('path');
 var socket = remote.getCurrentWebContents().victim;
+var ORDER = 'order';
 
 var dataPath = path.join(homeDir(), 'Desktop');
 var downloadsPath = path.join(dataPath, 'SlimRAT');

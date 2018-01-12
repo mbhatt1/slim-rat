@@ -35,15 +35,15 @@ function createWindow() {
 
   mainWindow = new BrowserWindow({
     width: 1200,
-    height: 700,
+    height: 768,
     show: false,
     center: true,
     minWidth: 900,
-    minHeight: 500,
+    minHeight: 600,
     icon: __dirname + '/app/assets/images/icons/icon.ico',
   });
 
-  mainWindow.setMenu(null);
+  // mainWindow.setMenu(null);
   mainWindow.loadURL('file://' + __dirname + '/app/index.html');
 
   mainWindow.on('closed', function() {
@@ -113,10 +113,10 @@ process.on('uncaughtException', function(error) {
 ipcMain.on('openLabWindow', function(e, page, index) {
   let child = new BrowserWindow({
     width: 1200,
-    height: 700,
+    height: 768,
     center: true,
     minWidth: 900,
-    minHeight: 500,
+    minHeight: 600,
     parent: mainWindow,
     icon: __dirname + '/app/assets/images/icons/icon.ico',
   });
@@ -124,7 +124,7 @@ ipcMain.on('openLabWindow', function(e, page, index) {
   windows[index] = child.id;
   child.webContents.victim = victimsList.getVictim(index).socket;
 
-  child.setMenu(null);
+  // child.setMenu(null);
   child.loadURL('file://' + __dirname + '/app/' + page);
 
   child.once('ready-to-show', function() {

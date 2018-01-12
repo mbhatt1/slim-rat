@@ -5,10 +5,10 @@ var homeDir = require('homedir');
 var fs = require('fs-extra');
 var path = require('path');
 var victimsList = remote.require('./main');
+var viclist = {};
 
 var dataPath = path.join(homeDir(), 'Desktop');
 var downloadsPath = path.join(dataPath, 'SlimRAT');
-var viclist = {};
 
 app.controller('MainCtrl', function($scope) {
   $mainCtrl = $scope;
