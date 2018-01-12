@@ -1,11 +1,10 @@
 <div class="fixed-action-btn horizontal">
-  <a class="btn-floating btn-large indigo">
-    <i class="large material-icons">add</i>
+  <a class="btn-floating btn-large indigo" ng-show="isSaveShown" ng-click="savePhoto();">
+    <i class="large material-icons">file_download</i>
   </a>
-  <ul>
-    <li><a class="btn-floating btn-large indigo" ng-show="isSaveShown" ng-click="savePhoto();"><i class="material-icons">file_download</i></a></li>
-    <li><a class="btn-floating btn-large indigo" ng-click="snap();"><i class="material-icons">photo_camera</i></a></li>
-  </ul>
+  <a class="btn-floating btn-large indigo" ng-click="snap();">
+    <i class="large material-icons">photo_camera</i>
+  </a>
 </div>
 
 <div class="card card-50">
@@ -15,7 +14,7 @@
   <div class="card-action">
     <span ng-repeat="item in cameras">
       <label>
-        <input type="radio" name="cameras" ng-model="selectedCam.id" ng-value="{{item.id}}" ng-change="snap();">
+        <input type="radio" name="cameras" ng-model="selectedCam.id" ng-value="{{item.id}}">
         <span>{{item.name}}</span>
       </label>
     </span>

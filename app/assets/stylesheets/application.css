@@ -53,7 +53,7 @@ body[ng-controller="LabCtrl"] .navbar-fixed {
   margin-right: 10px;
 }
 
-.mr15 {
+.right-15 {
   margin-right: -15px;
 }
 
@@ -85,7 +85,6 @@ body[ng-controller="LabCtrl"] .navbar-fixed {
   overflow: hidden;
   position: relative;
   align-items: center;
-  flex-direction: column;
   justify-content: center;
   min-height: calc(100vh - 147px);
 }
@@ -96,9 +95,20 @@ body[ng-controller="LabCtrl"] .navbar-fixed {
 }
 
 .card-50 .card-action {
+  min-height: 58px;
   text-align: center;
 }
 
 .card-50 .card-action span + span {
   margin-left: 15px;
+}
+
+.table-manager {
+  max-width: 70%;
+  margin-bottom: 0;
+  align-self: flex-start;
+}
+
+.table-manager td i {
+  vertical-align: bottom;
 }

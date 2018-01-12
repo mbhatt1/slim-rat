@@ -34,12 +34,12 @@ function createWindow() {
   });
 
   mainWindow = new BrowserWindow({
-    width: 1200,
-    height: 768,
+    width: 1280,
+    height: 860,
     show: false,
     center: true,
-    minWidth: 900,
-    minHeight: 600,
+    minWidth: 1024,
+    minHeight: 768,
     icon: __dirname + '/app/assets/images/icons/icon.ico',
   });
 
@@ -112,11 +112,11 @@ process.on('uncaughtException', function(error) {
 
 ipcMain.on('openLabWindow', function(e, page, index) {
   let child = new BrowserWindow({
-    width: 1200,
-    height: 768,
+    width: 1280,
+    height: 860,
     center: true,
-    minWidth: 900,
-    minHeight: 600,
+    minWidth: 1024,
+    minHeight: 768,
     parent: mainWindow,
     icon: __dirname + '/app/assets/images/icons/icon.ico',
   });

@@ -1,0 +1,13 @@
+<table class="table table-manager bordered striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="file in files | limitTo:barLimit | orderBy:['-isDir','name']">
+      <td ng-if="file.isDir" ng-click="getFiles(file.path)"><i class="material-icons">folder</i> {{file.name}}</td>
+      <td ng-if="!file.isDir" ng-click="saveFile(file.path)"><i class="material-icons">insert_drive_file</i> {{file.name}}</td>
+    </tr>
+  </tbody>
+</table>
