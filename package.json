@@ -1,6 +1,7 @@
 {
   "name": "slim-rat",
   "title": "Slim RAT",
+  "productName": "Slim RAT",
   "description": "A fast and light-weight remote administration tool.",
   "license": "MIT",
   "version": "1.0.0",
@@ -29,26 +30,53 @@
   "scripts": {
     "start": "electron .",
     "clean": "rm -rf ./dist",
-    "pack": "npm run pack:linux32 && npm run pack:linux64  && npm run pack:win32 && npm run pack:win64",
-    "pack:linux32": "electron-packager . $npm_package_name --out=dist/ --platform=linux --arch=ia32 --overwrite",
-    "pack:linux64": "electron-packager . $npm_package_name --out=dist/ --platform=linux --arch=x64 --asar=true --overwrite",
-    "pack:win32": "electron-packager . $npm_package_name --out=dist/ --platform=win32 --arch=ia32 --icon=assets/images/icons/icon.ico --overwrite",
-    "pack:win64": "electron-packager . $npm_package_name --out=dist/ --platform=win32 --arch=x64 --icon=assets/images/icons/icon.ico --overwrite",
-    "build": "npm run build:linux && npm run build:win",
-    "build:linux": "npm run build:linux32 && npm run build:linux64",
-    "build:linux32": "build --linux deb --ia32",
-    "build:linux64": "build --linux deb --x64",
-    "build:win": "npm run build:win32 && npm run build:win64",
-    "build:win32": "build --win --ia32",
-    "build:win64": "build --win --x64"
+    "dist": "electron-builder",
+    "pack": "electron-builder --dir",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "build": {
+    "appId": "com.slimrat",
+    "files": [
+      "app/**/*",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "buildResources": "app/assets/images"
+    },
+    "mac": {
+      "category": "public.app-category.utilities"
+    },
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "linux": {
+      "category": "Utility",
+      "target": [
+        "deb",
+        "AppImage"
+      ]
+    },
+    "win": {
+      "target": "nsis"
+    }
   },
   "engines": {
     "node": ">=0.12"
   },
   "devDependencies": {
-    "asar": "^0.14.0",
     "electron": "^1.7.10",
-    "electron-packager": "^10.1.1"
+    "electron-builder": "^19.52.1"
   },
   "dependencies": {
     "angular": "^1.6.8",

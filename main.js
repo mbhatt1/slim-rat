@@ -20,7 +20,7 @@ function createWindow() {
     frame: false,
     resizable: false,
     alwaysOnTop: true,
-    icon: __dirname + '/app/assets/images/icons/icon.ico',
+    icon: __dirname + '/app/assets/images/icon.ico',
   });
 
   splashWindow.loadURL('file://' + __dirname + '/app/splash.html');
@@ -40,7 +40,7 @@ function createWindow() {
     center: true,
     minWidth: 1024,
     minHeight: 768,
-    icon: __dirname + '/app/assets/images/icons/icon.ico',
+    icon: __dirname + '/app/assets/images/icon.ico',
   });
 
   mainWindow.setMenu(null);
@@ -118,7 +118,7 @@ ipcMain.on('openLabWindow', function(e, page, index) {
     minWidth: 1024,
     minHeight: 768,
     parent: mainWindow,
-    icon: __dirname + '/app/assets/images/icons/icon.ico',
+    icon: __dirname + '/app/assets/images/icon.ico',
   });
 
   windows[index] = child.id;

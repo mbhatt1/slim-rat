@@ -30,13 +30,13 @@ $ npm start
 > Build the app
 
 ```bash
-$ npm build
+$ npm run dist
 ```
 
 > Remove build directory
 
 ```bash
-$ npm clean
+$ npm run clean
 ```
 
 ## Contributing
