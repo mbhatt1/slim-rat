@@ -39,6 +39,9 @@
     "directories": {
       "buildResources": "app/assets/images"
     },
+    "files": [
+      "app/**/*"
+    ],
     "mac": {
       "category": "public.app-category.utilities"
     },
