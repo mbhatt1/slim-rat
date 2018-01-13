@@ -1,0 +1,30 @@
+<div class="fixed-action-btn horizontal">
+  <a class="btn-floating waves-effect waves-light btn-large indigo" ng-click="SaveCalls();">
+    <i class="large material-icons">file_download</i>
+  </a>
+</div>
+
+<div class="contacts" id="parent">
+  <table class="table bordered striped">
+    <thead>
+      <tr>
+        <th>Phone</th>
+        <th>Call Name</th>
+        <th>Type</th>
+      </tr>
+    </thead>
+    <tbody infinite-scroll="increaseLimit();" infinite-scroll-container='"#parent"'>
+      <tr ng-repeat="call in callsList | limitTo:barLimit">
+        <td>{{call.phoneNo}}</td>
+        <td>
+          <span ng-if="call.name==null">Unknown</span>
+          <span ng-if="call.name!=null">{{call.name}}</span>
+        </td>
+        <td>
+          <span ng-if="call.type==1">INCOMING</span>
+          <span ng-if="call.type!=1">OUTGOING</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

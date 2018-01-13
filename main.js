@@ -43,7 +43,7 @@ function createWindow() {
     icon: __dirname + '/app/assets/images/icons/icon.ico',
   });
 
-  // mainWindow.setMenu(null);
+  mainWindow.setMenu(null);
   mainWindow.loadURL('file://' + __dirname + '/app/index.html');
 
   mainWindow.on('closed', function() {
@@ -124,7 +124,7 @@ ipcMain.on('openLabWindow', function(e, page, index) {
   windows[index] = child.id;
   child.webContents.victim = victimsList.getVictim(index).socket;
 
-  // child.setMenu(null);
+  child.setMenu(null);
   child.loadURL('file://' + __dirname + '/app/' + page);
 
   child.once('ready-to-show', function() {
