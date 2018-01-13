@@ -31,6 +31,10 @@ body[ng-controller="LabCtrl"] .navbar-fixed {
   margin-bottom: 15px;
 }
 
+.table i {
+  vertical-align: bottom;
+}
+
 .table tbody tr {
   cursor: pointer;
 }
@@ -118,10 +122,6 @@ body[ng-controller="LabCtrl"] .navbar-fixed {
   align-self: flex-start;
 }
 
-.table-manager td i {
-  vertical-align: bottom;
-}
-
 .record {
   width: 100%;
   margin: 0 auto;
@@ -131,12 +131,18 @@ body[ng-controller="LabCtrl"] .navbar-fixed {
 }
 
 .record .range-field {
+  width: 100%;
   margin-bottom: 80px;
 }
 
 .record .range-field label {
+  width: 100%;
   display: block;
-  text-align: right;
+}
+
+.record .range-field label i {
+  display: block;
+  position: relative;
 }
 
 .record .player {
@@ -171,4 +177,15 @@ body[ng-controller="LabCtrl"] .navbar-fixed {
 
 .contacts .table tbody tr {
   cursor: default;
+}
+
+.sms-manager {
+  width: 100%;
+  max-width: 70%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.sms-manager .collapsible {
+  width: 100%;
 }

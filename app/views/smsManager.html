@@ -1,0 +1,14 @@
+<div class="fixed-action-btn horizontal">
+  <a class="btn-floating waves-effect waves-light btn-large indigo" ng-click="SaveSMS();">
+    <i class="large material-icons">file_download</i>
+  </a>
+</div>
+
+<div class="sms-manager" id="parent">
+  <ul class="collapsible" infinite-scroll="increaseLimit();" infinite-scroll-container='"#parent"'>
+    <li ng-repeat="sms in smsList | limitTo:barLimit">
+      <div class="collapsible-header"><i class="large material-icons">sms</i> {{sms.phoneNo}}</div>
+      <div class="collapsible-body"><span>{{sms.msg}}</span></div>
+    </li>
+  </ul>
+</div>

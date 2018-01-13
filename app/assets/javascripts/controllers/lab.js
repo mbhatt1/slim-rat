@@ -210,16 +210,16 @@ app.controller('SMSCtrl', function($scope, $rootScope) {
     socket.removeAllListeners(sms);
   });
 
-  $SMSCtrl.getSMSList = function() {
-    $SMSCtrl.load = 'loading';
-    $SMSCtrl.barLimit = 50;
-    $rootScope.Log('Get SMS list..');
-    socket.emit(ORDER, { order: sms, extra: 'ls' });
-  };
+  $SMSCtrl.load = 'loading';
+  $rootScope.Log('Get SMS list..');
+  socket.emit(ORDER, { order: sms, extra: 'ls' });
 
+  $SMSCtrl.barLimit = 50;
   $SMSCtrl.increaseLimit = function() {
     $SMSCtrl.barLimit += 50;
   };
+
+  $('.sms-manager .collapsible').collapsible();
 
   $SMSCtrl.SendSMS = function(phoneNo, msg) {
     $rootScope.Log('Sending SMS..');
@@ -387,7 +387,7 @@ app.controller('MicCtrl', function($scope, $rootScope) {
     var minutes = '0' + Math.floor(seconds / 60);
     var seconds = '0' + (seconds - minutes * 60);
     var time = minutes.substr(-2) + ':' + seconds.substr(-2);
-    $('.record .range-field label').text(time);
+    $('.record .range-field label span').text(time);
   };
 
   socket.on(mic, function(data) {

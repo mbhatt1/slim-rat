@@ -12,7 +12,7 @@
         <th>Phone</th>
       </tr>
     </thead>
-    <tbody infinite-scroll="increaseLimit()" infinite-scroll-container='"#parent"'>
+    <tbody infinite-scroll="increaseLimit();" infinite-scroll-container='"#parent"'>
       <tr ng-repeat="contact in contactsList | limitTo:barLimit">
         <td>{{contact.name}}</td>
         <td>{{contact.phoneNo}}</td>
