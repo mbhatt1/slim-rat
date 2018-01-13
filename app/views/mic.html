@@ -1,0 +1,31 @@
+<div class="fixed-action-btn horizontal">
+  <a class="btn-floating btn-large indigo" ng-disabled="isAudio" disabled ng-click="SaveAudio();">
+    <i class="large material-icons">file_download</i>
+  </a>
+  <a class="btn-floating btn-large indigo" ng-click="Record(sec);">
+    <i class="large material-icons">mic</i>
+  </a>
+</div>
+
+<div class="record">
+  <div class="range-field">
+    <label for="seconds">0</label>
+    <input type="range" id="seconds" min="10" max="600" step="10" ng-model="sec" ng-change="showTime(sec);">
+  </div>
+  <div class="player" ng-show="!isAudio">
+    <audio id="player" controls>
+      <source src id="sourceMp3" type="audio/mp3">
+    </audio>
+  </div>
+  <div class="preloader-wrapper">
+    <div class="spinner-layer spinner-blue-only">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div><div class="gap-patch">
+        <div class="circle"></div>
+      </div><div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
+</div>

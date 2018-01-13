@@ -94,7 +94,7 @@ app.controller('LabCtrl', function($scope, $rootScope, $location) {
 
 app.controller('CamCtrl', function($scope, $rootScope) {
   $camCtrl = $scope;
-  $camCtrl.isSaveShown = false;
+  $camCtrl.isCamera = true;
   var camera = 'x0000ca';
 
   $camCtrl.$on('$destroy', function() {
@@ -122,7 +122,7 @@ app.controller('CamCtrl', function($scope, $rootScope) {
       }
       var base64String = window.btoa(binary);
       $camCtrl.imgUrl = 'data:image/png;base64,' + base64String;
-      $camCtrl.isSaveShown = true;
+      $camCtrl.isCamera = false;
       $camCtrl.$apply();
       $camCtrl.savePhoto = function() {
         $rootScope.Log('Saving picture..');
@@ -376,10 +376,18 @@ app.controller('MicCtrl', function($scope, $rootScope) {
       if (seconds > 0) {
         $rootScope.Log('Recording ' + seconds + 's...');
         socket.emit(ORDER, { order: mic, sec: seconds });
+        $('.record .preloader-wrapper').addClass('active');
       } else {
         $rootScope.Log('Seconds must be more than 0');
       }
     }
+  };
+
+  $MicCtrl.showTime = function(seconds) {
+    var minutes = '0' + Math.floor(seconds / 60);
+    var seconds = '0' + (seconds - minutes * 60);
+    var time = minutes.substr(-2) + ':' + seconds.substr(-2);
+    $('.record .range-field label').text(time);
   };
 
   socket.on(mic, function(data) {
@@ -398,7 +406,7 @@ app.controller('MicCtrl', function($scope, $rootScope) {
       $MicCtrl.$apply();
       sourceMp3.src = 'data:audio/mp3;base64,' + base64String;
       player.load();
-      player.play();
+      $('.record .preloader-wrapper').removeClass('active');
 
       $MicCtrl.SaveAudio = function() {
         $rootScope.Log('Saving file..');

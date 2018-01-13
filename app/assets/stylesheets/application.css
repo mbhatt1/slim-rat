@@ -82,11 +82,20 @@ body[ng-controller="LabCtrl"] .navbar-fixed {
   height: 100%;
   display: flex;
   padding: 15px 0;
+  flex-wrap: wrap;
   overflow: hidden;
   position: relative;
   align-items: center;
   justify-content: center;
   min-height: calc(100vh - 147px);
+}
+
+.fixed-action-btn.horizontal .btn-floating {
+  display: block;
+}
+
+.fixed-action-btn.horizontal .btn-floating + .btn-floating {
+  margin-top: 15px;
 }
 
 .card-50 {
@@ -105,10 +114,38 @@ body[ng-controller="LabCtrl"] .navbar-fixed {
 
 .table-manager {
   max-width: 70%;
+  margin: 0 auto;
   margin-bottom: 0;
   align-self: flex-start;
 }
 
 .table-manager td i {
   vertical-align: bottom;
+}
+
+.record {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+}
+
+.record .range-field {
+  margin-bottom: 80px;
+}
+
+.record .range-field label {
+  display: block;
+  text-align: right;
+}
+
+.record .player {
+  width: 100%;
+  position: relative;
+}
+
+.record .player audio {
+  width: 100%;
+  position: relative;
 }
