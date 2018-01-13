@@ -1,4 +1,4 @@
-# [![Slim RAT](https://raw.githubusercontent.com/abrahamcarvalhoo/slim-rat/master/app/assets/images/splash.png "Slim RAT")][github-url]
+# [![Slim RAT](https://raw.githubusercontent.com/abrahamcarvalhoo/slim-rat/server/app/assets/images/splash.png "Slim RAT")][github-url]
 
 [github-url]: https://github.com/abrahamcarvalhoo/slim-rat
 
