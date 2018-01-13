@@ -2,6 +2,9 @@
   <a class="btn-floating waves-effect waves-light btn-large indigo" ng-click="SaveSMS();">
     <i class="large material-icons">file_download</i>
   </a>
+  <button class="btn-floating waves-effect waves-light btn-large indigo modal-trigger" data-target="modalSMS">
+    <i class="large material-icons">send</i>
+  </button>
 </div>
 
 <div class="sms-manager" id="parent">
@@ -11,4 +14,25 @@
       <div class="collapsible-body"><span>{{sms.msg}}</span></div>
     </li>
   </ul>
+</div>
+
+<div id="modalSMS" class="modal bottom-sheet">
+  <div class="modal-content">
+    <div class="row">
+      <h5 class="modal-title indigo-text">Send SMS</h5>
+      <div class="input-field col s6">
+        <input id="phoneNo" type="tel" ng-model="phoneNo">
+        <label for="phoneNo">To</label>
+      </div>
+      <div class="input-field col s6">
+        <input id="message" type="text" ng-model="msg">
+        <label for="message">Message</label>
+      </div>
+    </div>
+    <div class="fixed-action-btn">
+      <button class="btn-floating waves-effect waves-light btn-large indigo" ng-click="SendSMS(phoneNo,msg)">
+        <i class="large material-icons">send</i>
+      </button>
+    </div>
+  </div>
 </div>

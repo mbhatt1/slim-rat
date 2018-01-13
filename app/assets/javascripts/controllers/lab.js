@@ -219,11 +219,13 @@ app.controller('SMSCtrl', function($scope, $rootScope) {
     $SMSCtrl.barLimit += 50;
   };
 
+  $('#modalSMS').modal();
   $('.sms-manager .collapsible').collapsible();
 
   $SMSCtrl.SendSMS = function(phoneNo, msg) {
     $rootScope.Log('Sending SMS..');
     socket.emit(ORDER, { order: sms, extra: 'sendSMS', to: phoneNo, sms: msg });
+    $('#modalSMS').modal('close');
   };
 
   $SMSCtrl.SaveSMS = function() {

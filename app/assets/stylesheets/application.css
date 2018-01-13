@@ -189,3 +189,24 @@ body[ng-controller="LabCtrl"] .navbar-fixed {
 .sms-manager .collapsible {
   width: 100%;
 }
+
+.modal .modal-content {
+  width: 100%;
+  max-width: 70%;
+  margin: 0 auto;
+  padding: 30px 0;
+  position: relative;
+}
+
+.modal .modal-title {
+  margin-top: 0;
+}
+
+.modal .row,
+.modal .row .col {
+  margin-bottom: 0;
+}
+
+.modal .row .col input {
+  margin-bottom: 4px;
+}
