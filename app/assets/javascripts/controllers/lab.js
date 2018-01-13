@@ -431,7 +431,7 @@ app.controller('LocCtrl', function($scope, $rootScope) {
     socket.removeAllListeners(location);
   });
 
-  var map = L.map('mapid').setView([51.505, -0.09], 13);
+  var map = L.map('mapid').setView([51.505, -0.09], 16);
   L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {}).addTo(map);
 
   $LocCtrl.Refresh = function() {

@@ -83,7 +83,6 @@ body[ng-controller="LabCtrl"] .navbar-fixed {
   display: flex;
   padding: 15px 0;
   flex-wrap: wrap;
-  overflow: hidden;
   position: relative;
   align-items: center;
   justify-content: center;
@@ -148,4 +147,12 @@ body[ng-controller="LabCtrl"] .navbar-fixed {
 .record .player audio {
   width: 100%;
   position: relative;
+}
+
+.map {
+  left: -15px;
+  bottom: 0;
+  width: 100vw;
+  position: absolute;
+  height: calc(100vh - 147px);
 }
