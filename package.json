@@ -5,7 +5,7 @@
   "description": "A fast and light-weight remote administration tool.",
   "license": "MIT",
   "version": "1.0.0",
-  "main": "main.js",
+  "main": "app/main.js",
   "homepage": "https://github.com/abrahamcarvalhoo/slim-rat",
   "author": {
     "name": "Abraham Carvalho",
@@ -36,10 +36,6 @@
   },
   "build": {
     "appId": "com.slimrat",
-    "files": [
-      "app/**/*",
-      "node_modules/**/*"
-    ],
     "directories": {
       "buildResources": "app/assets/images"
     },
