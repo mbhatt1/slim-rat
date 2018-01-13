@@ -156,3 +156,19 @@ body[ng-controller="LabCtrl"] .navbar-fixed {
   position: absolute;
   height: calc(100vh - 147px);
 }
+
+.contacts {
+  width: 100%;
+  max-width: 70%;
+  margin: 0 auto;
+  position: relative;
+  align-self: flex-start;
+}
+
+.contacts .table {
+  margin-bottom: 0;
+}
+
+.contacts .table tbody tr {
+  cursor: default;
+}

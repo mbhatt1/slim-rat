@@ -48,12 +48,12 @@
         </thead>
         <tbody>
           <tr ng-repeat="(key, victim) in victims" ng-click="openLab(key, victim.manf, victim.model, victim.release);">
-            <td class="id" ng-bind="key"></td>
-            <td class="manf" ng-bind="victim.manf"></td>
-            <td class="model" ng-bind="victim.model"></td>
-            <td class="release" ng-bind="victim.release"></td>
-            <td class="ip" ng-bind="victim.ip"></td>
-            <td class="port" ng-bind="victim.port"></td>
+            <td class="id">{{key}}</td>
+            <td class="manf">{{victim.manf}}</td>
+            <td class="model">{{victim.model}}</td>
+            <td class="release">{{victim.release}}</td>
+            <td class="ip">{{victim.ip}}</td>
+            <td class="port">{{victim.port}}</td>
           </tr>
         </tbody>
       </table>
